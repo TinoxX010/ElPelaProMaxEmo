@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Se busca novia para una leyenda</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">LEGEND<span>.exe</span></div>
+        <nav>
+            <a href="#sobre">Sobre él</a>
+            <a href="#stats">Stats</a>
+            <a href="#compat">Compatibilidad</a>
+            <a href="#testimonios">Testimonios</a>
+        </nav>
+        <!-- Botón para cambiar modo oscuro / claro -->
+        <button id="toggleTema" class="btn-tema">🌙</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <p class="hero-tag">// MISIÓN PRINCIPAL</p>
+            <h1>Se busca novia<br><span class="neon">para una leyenda.</span></h1>
+            <p class="hero-sub">Fan de GTA V, corazón enorme y listo para encontrar a su compañera de aventuras.</p>
+            <button class="btn-hero" onclick="lanzarConfeti()">Aceptar misión ❤️</button>
+        </div>
+    </section>
+
+    <!-- FOTO -->
+    <section class="foto-section">
+        <h2 class="titulo-seccion">El protagonista</h2>
+        <div class="foto-marco">
+            <!-- Imagen: si no existe img/foto.jpg se muestra "Próximamente..." -->
+            <img
+                src="img/foto.jpg"
+                alt="Foto del protagonista"
+                onerror="this.style.display='none'; document.getElementById('foto-fallback').style.display='flex';"
+            />
+            <div id="foto-fallback" class="foto-fallback">
+                <span>ACÁ VA LA FOTO</span>
+                <small>Próximamente...</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE ÉL -->
+    <section id="sobre" class="sobre">
+        <h2 class="titulo-seccion">Sobre él</h2>
+        <div class="tarjetas">
+            <div class="tarjeta">
+                <h3>👤 Nombre</h3>
+                <p>Editar acá</p>
+            </div>
+            <div class="tarjeta">
+                <h3>🎂 Edad</h3>
+                <p>00 años</p>
+            </div>
+            <div class="tarjeta">
+                <h3>💜 Gustos</h3>
+                <p>Salir a caminar, memes, autos, comer pizza.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>🎮 Videojuegos favoritos</h3>
+                <p>GTA V, Minecraft, Rocket League.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>🎧 Música</h3>
+                <p>Emo, rock alternativo, trap y algo de reggaeton (sí, admitido).</p>
+            </div>
+            <div class="tarjeta">
+                <h3>💘 Busca en una pareja</h3>
+                <p>Buena onda, humor negro, paciencia y ganas de aventura.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section id="stats" class="stats">
+        <h2 class="titulo-seccion">Estadísticas del personaje</h2>
+        <!-- Cambiá los data-valor para modificar los porcentajes -->
+        <div class="stat"><span>Lealtad</span><div class="barra"><div class="fill" data-valor="98"></div></div></div>
+        <div class="stat"><span>Humor</span><div class="barra"><div class="fill" data-valor="95"></div></div></div>
+        <div class="stat"><span>Cariño</span><div class="barra"><div class="fill" data-valor="99"></div></div></div>
+        <div class="stat"><span>Paciencia</span><div class="barra"><div class="fill" data-valor="70"></div></div></div>
+        <div class="stat"><span>Facha</span><div class="barra"><div class="fill" data-valor="88"></div></div></div>
+    </section>
+
+    <!-- COMPATIBILIDAD -->
+    <section id="compat" class="compat">
+        <h2 class="titulo-seccion">Test de compatibilidad</h2>
+        <div id="quiz" class="quiz">
+            <div class="pregunta activa">
+                <p>¿Te gustan los memes?</p>
+                <div class="opciones">
+                    <button onclick="siguientePregunta()">Sí</button>
+                    <button onclick="siguientePregunta()">Obvio</button>
+                </div>
+            </div>
+            <div class="pregunta">
+                <p>¿Aguantás una noche entera jugando GTA?</p>
+                <div class="opciones">
+                    <button onclick="siguientePregunta()">Sí</button>
+                    <button onclick="siguientePregunta()">Con pizza sí</button>
+                </div>
+            </div>
+            <div class="pregunta">
+                <p>¿Corazón grande y humor negro?</p>
+                <div class="opciones">
+                    <button onclick="siguientePregunta()">100%</button>
+                    <button onclick="siguientePregunta()">Match perfecto</button>
+                </div>
+            </div>
+            <div class="pregunta resultado">
+                <p class="neon-red">Compatibilidad: 100%</p>
+                <small>Peligrosamente compatibles.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="testimonios">
+        <h2 class="titulo-seccion">Lo que dicen de él</h2>
+        <div class="tarjetas">
+            <div class="tarjeta">
+                <p>"Me presta el cargador siempre. 10/10."</p>
+                <span>— Un amigo random</span>
+            </div>
+            <div class="tarjeta">
+                <p>"Nunca me falló en una misión de GTA. Novio material."</p>
+                <span>— Compañero de crew</span>
+            </div>
+            <div class="tarjeta">
+                <p>"Es de los que responden los mensajes. Extinto."</p>
+                <span>— Su prima</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta">
+        <button class="btn-mega" onclick="abrirModal()">Quiero conocerlo ❤️</button>
+    </section>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-caja">
+            <button class="cerrar" onclick="cerrarModal()">✕</button>
+            <h3>Contactalo aquí 👇</h3>
+            <ul class="contactos">
+                <li>📸 Instagram: <a href="#">@usuario</a></li>
+                <li>💬 WhatsApp: <a href="#">+54 000 000 0000</a></li>
+                <li>🎧 Discord: <a href="#">usuario#0000</a></li>
+                <li>🎵 TikTok: <a href="#">@usuario</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Hecho con amor, cafeína y muchísimas horas de GTA V. 💜</p>
+        <small>© 2026 – No apto para corazones débiles.</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
